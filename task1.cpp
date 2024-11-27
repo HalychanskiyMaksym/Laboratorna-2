@@ -1,29 +1,19 @@
 #include <iostream>
-using namespace std;
 
 int main() {
-    
-    double a, b, c, d;
+    int a, b, c, d;
+    std::cout << "Enter integers a, b, c, d \n";
+    std::cin >> a >> b >> c >> d;
 
-    // Питаєм данні для змінних
-    cout << "Введіть значення a: ";
-    cin >> a;
+    // Розрахунки без множення та ділення
+    int term1 = (a << 4) - a; // 15 * a
+    int term2 = (b << 8) + (b << 5) + (b << 4) + (b << 3); // 312 * b
+    int divisionResult = (term1 + term2) >> 6; // (15 * a + 312 * b) / 64
+    int term3 = (c << 7) - (c << 3); // 120 * c
+    int term4 = (d << 7) - (d << 3) + d; // 121 * d
 
-    cout << "Введіть значення b: ";
-    cin >> b;
+    int result = divisionResult - term3 + term4; // Підсумковий вираз
 
-    cout << "Введіть значення c: ";
-    cin >> c;
-
-    cout << "Введіть значення d: ";
-    cin >> d;
-
-    // все обчислив
-    double result = ((15 * a + 312 * b) / 64) - (c * 120 + d * 121);
-
-    // вивів результат
-    cout << "Результат виразу: " << result << endl;
-
+    std::cout << "Result: " << result << std::endl;
     return 0;
 }
-
